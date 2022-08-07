@@ -38,6 +38,12 @@ p {
   margin: 0;
 }
 
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .header {
   border-bottom: 1px solid var(--header-border-color);
@@ -88,7 +94,7 @@ p {
   align-self: center;
 }
 
-.contacts-icon .email {
+.contacts-link .email {
   display: inline;
   width: 16px;
   height: 12px;
@@ -97,7 +103,7 @@ p {
   margin-right: 10px;
 }
 
-.contacts-icon .tel {
+.contacts-link .tel {
   display: inline;
   width: 10px;
   height: 16px;
@@ -106,22 +112,19 @@ p {
   margin-right: 10px;
 }
 
-.contacts-link {
+.contacts-link .contact{
   color: var(--primary-text-color);
 }
 
-/*.header-contacts a:hover,
-.header-contacts a:focus {
+.contacts-link .contact:hover,
+.contacts-link .contact:focus {
   color: var(--accent-color);
-}*/
-
-.contacts-link:hover,
-.contacts-link:focus {
-  color: var(--accent-color)
 }
 
-
-
+.contacts-item:hover .icon,
+.contacts-item:focus .icon {
+  fill: var(--accent-color);
+}
 
 /*
 .item .email::before {
@@ -168,39 +171,54 @@ p {
   color: var(--accent-color);
 }
 
-.footer {
-  background-color: var(--footer-background-color);
-  padding: 60px 0;
+/*.item.currrent {
+  display: flex
 }
 
-.container {
-  width: 1200px;
-  padding: 0 15px;
-  margin-left: auto;
-  margin-right: auto;
+.item.current::after {
+  content: "";
+  width: 48px;
+  height: 4px;
+  background-color: var(--accent-color);
+}*/
+
+.footer {
+  background-color: var(--footer-background-color);
+}
+
+.footer-wrap .container {
+  display: flex;
+}
+
+.footer-smm .join {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--background-color);
+  margin-bottom: 20px;
 }
 
 .footer-contacts {
-  font-style: normal;
-  font-size: 14px;
-  line-height: 1.7;
+  padding: 60px 0;
+  margin-right: 70px;
 }
 
-.footer-contacts a {
+.contacts-list li:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-contacts .item {
   display: block;
   align-items: flex-start;
   color: rgba(255, 255, 255, 0.6);
   }
 
-.footer-contacts .item:not(:last-child) {
-  margin-bottom: 9px
-}
-
 .footer-contacts .footer-address {
   color: var(--background-color);
+  font-style: normal;
 }
 
-.logo-footer {
+.footer-contacts .logo-footer {
   color: var(--accent-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -212,11 +230,33 @@ p {
   color: var(--background-color);
 }
 
-.footer-contacts a:hover,
+/*.footer-contacts a:hover,
 .footer-contacts a:focus {
   color: var(--accent-color);
+}*/
+
+.footer-smm {
+  display: inline-block;
+  padding: 72px 0;
 }
 
+.footer .footer-smm-list {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-smm-list .smm {
+  display: inline-flex;
+  justify-content: center;
+  width: calc((100%-3*10px)/4);
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-smm-list .smm + .smm {
+margin-left: 10px;
+}
 
 .hero {
   max-width: 1600px;
@@ -225,8 +265,8 @@ p {
   background-color: #C4C4C4;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero.jpg);  
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   padding: 200px 0;
   text-align: center;
 }
@@ -395,7 +435,7 @@ text-align: center;
   background-color: var(--background-color);
 }
 
-.social-media-list{
+.team-social-media {
   display: flex;
   justify-content: center;
   padding-top: 0px;
@@ -405,51 +445,56 @@ text-align: center;
   margin: auto;
 }
 
-.social-media-list .smm {
-  display: inline-flex;
-  justify-content: center;
-  width: calc((100%-3*10px)/4);
-  height: 44px;
-  border-radius: 50%;
-  background-color: var(--background-color);
+.social-media-list {
+  display: flex;
+  gap: 10px;
 }
 
-.social-media-list .smm + .smm {
-  margin-left: 10px;
+.soc-link {
+  display: flex;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: var(--background-color);
+  justify-content: center;
+  align-items: center;
 }
 
 .smm-icon {
   width: 20px;
   height: 20px;
-  justify-content: center;
-  align-self: center;
+  fill: #AFB1B8 ;
 }
 
-
-.smm:hover,
-.smm:focus {
-  color: var(--background-color);
+.soc-link:hover,
+.soc-link:focus {
   background-color: var(--accent-color);
   cursor: pointer;
-  /*change the color of the icon*/
+}
+
+.soc-link:hover .smm-icon,
+.soc-link:focus .smm-icon {
+  fill: var(--background-color);
 }
 
 .clients-list {
   display: flex;
   justify-content: center;
+  padding-top: 0px;
+  margin: auto;
 }
 
-.clients-list .item{
-  width: calc((100% - 5*30px) /6);
-  border: 1px solid #AFB1B8;
-  border-radius: 4px;
-  width: 170px;
-  height: 92px;
-  padding: 16px 32px;
-}
-
-.clients-list .item:hover {
-  border: 1px solid var(--accent-color);
+.clients-link {
+    display: flex;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    justify-content: center;
+    align-items: center;
 }
 
 .clients-list .item + .item {
@@ -459,12 +504,46 @@ text-align: center;
 .clients-icon {
   width: 106px;
   height: 60px;
+  fill: #AFB1B8;
 }
 
-.clients-icon:hover {
-  fill: var(--accent-color);
+.clients-link:hover,
+.clients-link:focus {
+  border: 1px solid var(--accent-color);
   cursor: pointer;
-  /*поменять цвет лого*/
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: var(--accent-color);
+}
+
+.footer-smm-list {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-soc-link {
+  display: flex;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-smm-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--background-color) ;
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .portfolio {
@@ -477,7 +556,6 @@ text-align: center;
   justify-content: center;
   margin-bottom: 50px;
 }
-
 
 .filter-list .item + .item {
   margin-left: 8px;
