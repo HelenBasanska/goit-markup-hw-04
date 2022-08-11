@@ -69,84 +69,6 @@ p {
   color: var(--logo-main-color);
 }
 
-.header-contacts {
-  display: flex;
-  margin-left: auto;
-  align-self: center;
-}
-
-.header-contacts .item + .item {
-  margin-left: 30px;
-}
-
-.header-contacts .item {
-  display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
-
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-}
-
-.contacts-link .email {
-  display: inline;
-  width: 16px;
-  height: 12px;
-  justify-content: center;
-  align-self: center;
-  margin-right: 10px;
-}
-
-.contacts-link .tel {
-  display: inline;
-  width: 10px;
-  height: 16px;
-  justify-content: center;
-  align-self: center;
-  margin-right: 10px;
-}
-
-.contacts-link .contact{
-  color: var(--primary-text-color);
-}
-
-.contacts-link .contact:hover,
-.contacts-link .contact:focus {
-  color: var(--accent-color);
-}
-
-.contacts-item:hover .icon,
-.contacts-item:focus .icon {
-  fill: var(--accent-color);
-}
-
-/*
-.item .email::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
-  background-image: url(../images/email-logo.svg);
-  background-size: auto;
-}
-
-.item .tel::before {
-  content: "";
-  display: inline-flex;
-  width: 10px;
-  height: 16px;
-  margin-right: 10px;
-  background-image: url(../images/smartphone-logo.svg);
-  background-size: auto;
- }*/
-
 .site-nav {
   display: flex;
 }
@@ -171,23 +93,54 @@ p {
   color: var(--accent-color);
 }
 
-/*.item.currrent {
-  display: flex
+
+.header-contacts {
+  display: flex;
+  margin-left: auto;
+  align-self: center;
 }
 
-.item.current::after {
-  content: "";
-  width: 48px;
-  height: 4px;
-  background-color: var(--accent-color);
-}*/
+.header-contacts .item + .item {
+  margin-left: 30px;
+}
+
+.header-contacts .contact {
+  color: var(--primary-text-color);
+  fill: currentColor;
+  
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+
+}
+
+.header-contacts .contact:hover,
+.header-contacts .contact:focus {
+  color: var(--accent-color);
+}
+
+.email, .tel {
+  display: inline;
+  justify-content: center;
+  align-self: center;
+  margin-right: 10px;
+}
 
 .footer {
   background-color: var(--footer-background-color);
+  padding: 60px 0;
 }
 
-.footer-wrap .container {
+.footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-smm .join {
@@ -199,7 +152,6 @@ p {
 }
 
 .footer-contacts {
-  padding: 60px 0;
   margin-right: 70px;
 }
 
@@ -230,14 +182,8 @@ p {
   color: var(--background-color);
 }
 
-/*.footer-contacts a:hover,
-.footer-contacts a:focus {
-  color: var(--accent-color);
-}*/
-
 .footer-smm {
   display: inline-block;
-  padding: 72px 0;
 }
 
 .footer .footer-smm-list {
@@ -332,36 +278,24 @@ margin-left: 10px;
   margin: -1px;
 }
 
-
 .benefits-list {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .benefits-list .item {
   width: calc((100% - 3*30px) /4);
   }
 
-.benefits-list .item+.item {
-  margin-left: 30px;
-}
-
-.benefits-icon .icon {
-  display: block;
+.benefits-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 120px;
-  padding: 25px 0;
   margin: auto;
   background-color: var(--filter-button-color);
   border-radius: 4px;
-  margin-bottom: 30px;
-  justify-content: center;
-  align-self: center;
-}
-
-.benefits-icon .icon:hover {
-  border: 1px solid var(--accent-color)
 }
 
 .benefits h3 {
@@ -457,20 +391,18 @@ text-align: center;
   width: 44px;
   border-radius: 50%;
   background-color: var(--background-color);
+  fill: currentColor;
   justify-content: center;
   align-items: center;
 }
 
 .smm-icon {
-  width: 20px;
-  height: 20px;
-  fill: #AFB1B8 ;
+  fill: #AFB1B8;
 }
 
 .soc-link:hover,
 .soc-link:focus {
   background-color: var(--accent-color);
-  cursor: pointer;
 }
 
 .soc-link:hover .smm-icon,
@@ -487,12 +419,13 @@ text-align: center;
 
 .clients-link {
     display: flex;
-    justify-content: center;
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     background-color: var(--background-color);
+    color: #AFB1B8;
+    fill: currentColor;
     justify-content: center;
     align-items: center;
 }
@@ -501,20 +434,9 @@ text-align: center;
   margin-left: 30px;
 }
 
-.clients-icon {
-  width: 106px;
-  height: 60px;
-  fill: #AFB1B8;
-}
-
 .clients-link:hover,
 .clients-link:focus {
   border: 1px solid var(--accent-color);
-  cursor: pointer;
-}
-
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
   fill: var(--accent-color);
 }
 
@@ -530,20 +452,15 @@ text-align: center;
   width: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  color: var(--background-color);
+  fill: currentColor;
   justify-content: center;
   align-items: center;
-}
-
-.footer-smm-icon {
-  width: 20px;
-  height: 20px;
-  fill: var(--background-color) ;
 }
 
 .footer-soc-link:hover,
 .footer-soc-link:focus {
   background-color: var(--accent-color);
-  cursor: pointer;
 }
 
 .portfolio {
@@ -595,8 +512,8 @@ text-align: center;
   border: 1px solid var(--portfolio-item-border);
 }
 
-.portfolio-list .item:hover,
-.portfolio-list .item:focus {
+.portfolio-card:hover,
+.portfolio-card:focus {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
 }
 
